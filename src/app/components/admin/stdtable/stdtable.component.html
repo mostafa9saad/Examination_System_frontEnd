@@ -1,0 +1,29 @@
+<div class="container content">
+  <header class="d-none d-md-flex">
+    <div class="row gap-md-2">
+      <h4 class="text">All students</h4>
+      <!-- <p class="subtitle">degress</p> -->
+    </div>
+  </header>
+  <div class="row mt-5">
+    <table class="table table-dark">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">First Name</th>
+          <th scope="col">Last Name</th>
+          <th scope="col">Email</th>
+        </tr>
+      </thead>
+      <tbody class="table-group-divider">
+        <tr *ngFor="let itmes of students">
+          <th scope="row stdid">{{ itmes.id }}</th>
+          <td class="col-3">{{ itmes.fName }}</td>
+          <td class="col-3">{{ itmes.lName }}</td>
+          <td class="col-3">{{ itmes.email }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+<!-- justify-content-between -->

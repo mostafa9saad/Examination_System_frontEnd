@@ -1,0 +1,229 @@
+<div class="content">
+  <form action="Post" (submit)="onpublich($event)" [formGroup]="testbuild">
+    <header class="d-none d-md-flex">
+      <div class="row gap-md-2">
+        <h4 class="text">Welcome Back ,{{ user.fName + " " + user.lName }}</h4>
+        <p class="subtitle">Build and Publish your test</p>
+      </div>
+    </header>
+    <div class="compo row justify-content-between">
+      <div class="col-md-3 mt-md-3">
+        <label for="validationCustom04" class="form-label text"
+          >Question Type</label
+        >
+        <select
+          class="form-select"
+          id="validationCustom04"
+          formControlName="type"
+          [ngClass]="getType.status == 'VALID' ? 'is-valid' : ''"
+          [className]="
+            getType.status == 'INVALID' && getType.touched
+              ? 'form-select is-invalid'
+              : 'form-select'
+          "
+        >
+          <option>muli choice</option>
+          <option>choice</option>
+          <option>true or false</option>
+        </select>
+        <div class="invalid-feedback">requaird</div>
+      </div>
+      <div class="col-md-3 mt-3">
+        <label for="difficulty" class="form-label text">difficulty</label>
+        <select
+          class="form-select"
+          id="difficulty"
+          formControlName="difficulty"
+          [ngClass]="getdifficulty.status == 'VALID' ? 'is-valid' : ''"
+          [className]="
+            getdifficulty.status == 'INVALID' && getdifficulty.touched
+              ? 'form-select is-invalid'
+              : 'form-select'
+          "
+        >
+          <option>Easy</option>
+          <option>Mid</option>
+          <option>Hard</option>
+        </select>
+        <div class="invalid-feedback">Please select a valid state.</div>
+      </div>
+      <div class="col-md-3 mt-3">
+        <label for="Test" class="form-label text">Test Name</label>
+        <select
+          [(ngModel)]="testName"
+          class="form-select"
+          id="Test"
+          formControlName="testName"
+          [ngClass]="gettestName.status == 'VALID' ? 'is-valid' : ''"
+          [className]="
+            gettestName.status == 'INVALID' && gettestName.touched
+              ? 'form-select is-invalid'
+              : 'form-select'
+          "
+        >
+          <option *ngFor="let items of testList" [ngValue]="items.id">
+            {{ items.name }}
+          </option>
+        </select>
+        <div class="invalid-feedback">Please select a valid state.</div>
+      </div>
+    </div>
+    <div class="Question row justify-content-between">
+      <div class="col-12 col-md-7 mt-4">
+        <label for="Question" class="form-label text">Question</label>
+        <textarea
+          class="d-block col-12"
+          name="Question"
+          id="Question"
+          rows="3"
+          formControlName="questionBody"
+          [(ngModel)]="questions"
+          [ngClass]="getQuestionBody.status == 'VALID' ? 'is-valid' : ''"
+          [className]="
+            getQuestionBody.status == 'INVALID' && getQuestionBody.touched
+              ? 'd-block col-12 is-invalid'
+              : 'd-block col-12'
+          "
+        >
+        </textarea>
+      </div>
+      <div class="col-12 col-md-4 mt-md-4">
+        <label class="for" for="author"> auther </label>
+        <div class="auther input-group border border-1 rounded">
+          <div class="input-group-prepend">
+            <span class="input-group-text p-1 border-0 bg-white"
+              ><i class="bi bi-person-circle"></i
+            ></span>
+          </div>
+          <input
+            type="text"
+            class="form-control border-0 ps-3"
+            id="author"
+            [value]="user.fName + ' ' + user.lName"
+            disabled
+          />
+        </div>
+        <label class="for" for="mark"> mark </label>
+        <div class="input-group border border-1 rounded">
+          <input
+            type="number"
+            class="form-control border-0 p-1"
+            id="mark"
+            formControlName="mark"
+            [ngClass]="getmark.status == 'VALID' ? 'is-valid' : ''"
+            [className]="
+              getmark.status == 'INVALID' && getmark.touched
+                ? 'form-control border-0 p-1 is-invalid'
+                : 'form-control border-0 p-1'
+            "
+          />
+        </div>
+      </div>
+    </div>
+    <div class="row justify-content-between">
+      <div class="Radio col-12 col-md-5">
+        <div class="mt-4">
+          <input
+            class=""
+            type="checkbox"
+            name="ans1"
+            id="flexRadioDefault1"
+            formControlName="isTrue1"
+          />
+          <label class="" for="flexRadioDefault1"> chooes 1 </label>
+        </div>
+        <textarea
+          name=""
+          class="d-block col-12"
+          rows="1"
+          formControlName="answer1"
+          [ngClass]="getanswer1.status == 'VALID' ? 'is-valid' : ''"
+          [className]="
+            getanswer1.status == 'INVALID' && getanswer1.touched
+              ? 'd-block col-12 is-invalid'
+              : 'd-block col-12'
+          "
+        ></textarea>
+      </div>
+      <div class="Radio col-12 col-md-5">
+        <div class="mt-4">
+          <input
+            class=""
+            type="checkbox"
+            name="ans2"
+            id="flexRadioDefault2"
+            formControlName="isTrue2"
+          />
+          <label class="" for="flexRadioDefault2"> chooes 2 </label>
+        </div>
+        <textarea
+          name=""
+          class="d-block col-12"
+          rows="1"
+          formControlName="answer2"
+          [ngClass]="getanswer2.status == 'VALID' ? 'is-valid' : ''"
+          [className]="
+            getanswer2.status == 'INVALID' && getanswer2.touched
+              ? 'd-block col-12 is-invalid'
+              : 'd-block col-12'
+          "
+        ></textarea>
+      </div>
+      <div class="Radio col-12 col-md-5">
+        <div class="mt-4">
+          <input
+            class=""
+            type="checkbox"
+            name="ans3"
+            id="flexRadioDefault3"
+            value=""
+            formControlName="isTrue3"
+          />
+          <label class="" for="flexRadioDefault3"> chooes 3 </label>
+        </div>
+        <textarea
+          name=""
+          class="d-block col-12"
+          rows="1"
+          formControlName="answer3"
+          [ngClass]="getanswer3.status == 'VALID' ? 'is-valid' : ''"
+          [className]="
+            getanswer3.status == 'INVALID' && getanswer3.touched
+              ? 'd-block col-12 is-invalid'
+              : 'd-block col-12'
+          "
+        ></textarea>
+      </div>
+      <div class="Radio col-12 col-md-5">
+        <div class="mt-4">
+          <input
+            class=""
+            type="checkbox"
+            name="ans4"
+            id="flexRadioDefault4"
+            formControlName="isTrue4"
+          />
+          <label class="" for="flexRadioDefault4"> chooes 4 </label>
+        </div>
+        <textarea
+          name=""
+          class="d-block col-12"
+          rows="1"
+          formControlName="answer4"
+          [ngClass]="getanswer4.status == 'VALID' ? 'is-valid' : ''"
+          [className]="
+            getanswer4.status == 'INVALID' && getanswer4.touched
+              ? 'd-block col-12 is-invalid'
+              : 'd-block col-12'
+          "
+        ></textarea>
+      </div>
+    </div>
+
+    <div class="mt-3 text-end">
+      <button type="submit" class="btn btn-info p-2 text">
+        <i class="bi bi-upload me-2"></i>publich
+      </button>
+    </div>
+  </form>
+</div>

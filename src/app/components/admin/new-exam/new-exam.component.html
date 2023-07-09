@@ -1,0 +1,51 @@
+<div class="body">
+  <div class="card-body">
+    <form [formGroup]="formExam" action="POST" (submit)="onsubmit($event)">
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">Exam Name</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+          <input
+            type="text "
+            class="form-control"
+            formControlName="name"
+            [ngClass]="getname.status == 'VALID' ? 'is-valid' : ''"
+            [className]="
+              getname.status == 'INVALID' && getname.touched
+                ? 'form-control is-invalid'
+                : 'form-control'
+            "
+          />
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">Image Name</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+          <input
+            type="text "
+            class="form-control"
+            formControlName="image"
+            [ngClass]="getimage.status == 'VALID' ? 'is-valid' : ''"
+            [className]="
+              getimage.status == 'INVALID' && getimage.touched
+                ? 'form-control is-invalid'
+                : 'form-control'
+            "
+          />
+        </div>
+      </div>
+      <hr />
+      <div class="row">
+        <div class="col-sm-12">
+          <button type="submit" class="btn btn-info btn btn-info p-2 text">
+            <i class="bi bi-upload me-2"></i>publich
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

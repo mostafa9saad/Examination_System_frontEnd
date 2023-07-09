@@ -1,0 +1,77 @@
+<div class="row body">
+  <section class="col-12 p-5">
+    <div>
+      <p class="mb-4">{{ i + 1 }}/{{ questionList.length }}</p>
+      <h3>{{ nextQuestion.body }}</h3>
+    </div>
+  </section>
+  <form action="">
+    <section class="answers row col-12 p-4 justify-content-md-evenly">
+      <div class="col-12 col-md-5">
+        <input
+          class="form-check-input visually-hidden"
+          type="checkbox"
+          name="ans1"
+          value="{{ nextQuestion.answers[0].isTrue }}"
+          id="ans1"
+          [(ngModel)]="FristAns"
+        />
+        <label class="form-check-label" for="ans1">
+          <p>
+            {{ nextQuestion.answers[0].answer }}
+          </p>
+        </label>
+      </div>
+      <div class="col-12 col-md-5">
+        <input
+          class="form-check-input visually-hidden"
+          type="checkbox"
+          name="ans2"
+          value="{{ nextQuestion.answers[1].isTrue }}"
+          id="ans2"
+          [(ngModel)]="SecondAns"
+        />
+        <label class="form-check-label" for="ans2">
+          <p>
+            {{ nextQuestion.answers[1].answer }}
+          </p>
+        </label>
+      </div>
+      <div class="col-12 col-md-5">
+        <input
+          class="form-check-input visually-hidden"
+          type="checkbox"
+          name="ans3"
+          value=" {{ nextQuestion.answers[2].isTrue }}"
+          id="ans3"
+          [(ngModel)]="ThirdAns"
+        />
+        <label class="form-check-label" for="ans3">
+          <p>
+            {{ nextQuestion.answers[2].answer }}
+          </p>
+        </label>
+      </div>
+      <div class="col-12 col-md-5">
+        <input
+          class="form-check-input visually-hidden"
+          type="checkbox"
+          name="ans4"
+          value=" {{ nextQuestion.answers[3].isTrue }}"
+          id="ans4"
+          [(ngModel)]="FourthAns"
+        />
+        <label class="form-check-label" for="ans4">
+          <p>
+            {{ nextQuestion.answers[3].answer }}
+          </p>
+        </label>
+      </div>
+    </section>
+    <div class="fixed-bottom">
+      <button (click)="onclick()" type="reset" class="btn btn-outline-info p-3">
+        next Question
+      </button>
+    </div>
+  </form>
+</div>

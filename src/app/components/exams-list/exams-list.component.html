@@ -1,0 +1,25 @@
+<app-main-nav></app-main-nav>
+<div class="row">
+  <section>
+    <h1 class="border-bottom p-2">My Tech Stacks</h1>
+    <div class="pt-5">
+      <section class="row">
+        <div *ngFor="let items of testList" class="mycard mb-3 col-8 col-md-2">
+          <div class="img">
+            <img
+              class=""
+              src="../../../assets/img/examlist/{{ items.image }}"
+            />
+          </div>
+          <h5 class="">{{ items.name }}</h5>
+
+          <div class="text-center">
+            <a [routerLink]="['/Quiz', items.id]" class="btn btn-outline-info"
+              >Start Quiz</a
+            >
+          </div>
+        </div>
+      </section>
+    </div>
+  </section>
+</div>

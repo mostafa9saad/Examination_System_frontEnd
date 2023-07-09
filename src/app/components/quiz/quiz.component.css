@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.body {
+  min-height: 100vh;
+}
+section {
+  /* border: 1px solid black; */
+}
+.answers div {
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  border: 1px solid #eee;
+  background-color: white;
+  height: 100px;
+  margin-bottom: 10px;
+}
+.answers div input {
+  /* display: none; */
+}
+.answers div:hover {
+  box-shadow: 2px 2px 2px #eee;
+}
+/* .answers div:active {
+  border: 1px solid var(--green--color);
+}
+.answers div:focus {
+  border: 1px solid var(--green--color);
+} */
+.answers div input:checked ~ label {
+  border: 1px solid var(--green--color);
+}
+label {
+  position: absolute;
+  border-radius: 10px;
+  padding: 20px;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+}
+.visually-hidden {
+  position: absolute;
+  left: -100vw;
+
+  /* Note, you may want to position the checkbox over top the label and set the opacity to zero instead. It can be better for accessibilty on some touch devices for discoverability. */
+}
+button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}

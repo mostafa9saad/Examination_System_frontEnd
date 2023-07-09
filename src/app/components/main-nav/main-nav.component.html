@@ -1,0 +1,93 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="main">
+  <div class="container">
+    <img
+      src="../../../assets/img/dashboard/logo.png
+      "
+      alt=""
+      class="navbar-brand w-1"
+    />
+    <!-- <a class="navbar-brand" href="#">Examination</a> -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarScroll"
+      aria-controls="navbarScroll"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      class="collapse navbar-collapse justify-content-between"
+      id="navbarScroll"
+    >
+      <!-- <ul
+        class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll"
+        style="--bs-scroll-height: 100px"
+      ></ul> -->
+      <ul
+        class="navbar-nav my-2 my-lg-0 navbar-nav-scroll d-flex justify-content-between"
+      >
+        <div class="d-flex">
+          <li>
+            <a
+              class="nav-link"
+              aria-current="page"
+              [routerLinkActive]="'text-white'"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Home</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              class="nav-link"
+              [routerLink]="['/examlist']"
+              [routerLinkActive]="'text-white'"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Exams</a
+            >
+          </li>
+
+          <li class="nav-item">
+            <a
+              [routerLink]="['/dashboard/testbuilder']"
+              [ngClass]="role == 'admin' ? '' : 'd-none'"
+              class="nav-link"
+              [routerLinkActive]="'text-white'"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >DashBoard</a
+            >
+          </li>
+          <li class="nav-item">
+            <a
+              [routerLink]="['/profile']"
+              class="nav-link"
+              [routerLinkActive]="'text-white'"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Profile</a
+            >
+          </li>
+        </div>
+      </ul>
+      <div class="d-flex">
+        <a
+          class="nav-link"
+          [routerLinkActive]="'text-white'"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [ngClass]="!islogin ? 'd-none' : ''"
+          href="/login"
+          >Login</a
+        >
+
+        <a
+          class="nav-link"
+          (click)="logout()"
+          [ngClass]="islogin ? 'd-none' : ''"
+          >logout</a
+        >
+      </div>
+    </div>
+  </div>
+</nav>
+<!-- container-fluid -->

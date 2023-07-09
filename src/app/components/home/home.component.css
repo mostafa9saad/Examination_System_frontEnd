@@ -1,0 +1,169 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.main {
+  background-image: url("../../../assets/img/std1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+}
+.main section {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 40px;
+  /* From https://css.glass */
+  background: rgba(42, 77, 106, 0.2);
+
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border: 1px solid rgba(42, 77, 106, 0.3);
+}
+button {
+  padding: 10px;
+  background-color: #1dcd8d;
+  color: white;
+}
+button:hover {
+  background-color: white;
+  color: #1dcd8d;
+}
+.mainTxt {
+  color: aliceblue;
+  /* border: 1px solid; */
+  width: 400px;
+  padding: 5px 20px;
+}
+.mainTxt p {
+  font-size: xx-small;
+}
+.header {
+  min-height: 100vh;
+}
+.mainContainer {
+  /* background-color: #f2f2f2; */
+}
+.card {
+  border: none;
+  border-radius: 7px;
+  background-color: #f4f4f4;
+  box-shadow: 1px 1px 10px #999;
+}
+.card-body {
+}
+.card-text {
+  font-size: x-small;
+}
+.cards {
+  /* background-color: #f2f2f2; */
+}
+.ourSer {
+  min-height: 100vh;
+  background-image: url("../../../assets/img/Services.png");
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.ourSer :first-child {
+  padding-right: 10%;
+}
+.mainheader {
+  color: #1dcd8d;
+  font-weight: bolder;
+  font-family: "Nunito", sans-serif;
+}
+.mainSub {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: x-small;
+}
+.ourSer i {
+  color: #1dcd8d;
+  font-weight: bolder;
+  font-family: "Nunito", sans-serif;
+  font-size: xx-large;
+}
+.surCard {
+  background-color: #263237;
+  padding: 10px;
+  border-radius: 10px;
+}
+.teams {
+  min-height: 100vh;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+.teams .card {
+  background-color: #f4f4f4;
+  border-radius: 15px;
+}
+.teams .card h4 {
+  margin-top: 10px;
+  font-size: 15px;
+  color: #1dcd8d;
+}
+.roundendimg {
+  width: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: auto;
+}
+.contact {
+  position: relative;
+  min-height: 100vh;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-image: url("../../../assets/img/Contact.png"); */
+}
+.contact img {
+  /* position: absolute; */
+  display: flex;
+  width: 90%;
+  align-self: flex-start;
+}
+.aboutus {
+  min-height: 100vh;
+  background-image: url("../../../assets/img/Services.png");
+  /* display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: space-between;
+  gap: 20px; */
+}
+.context {
+  /* position: absolute; */
+  padding: 20px;
+  background-color: black;
+  height: 100vh;
+}
+.context h2 {
+  color: white;
+}
+.color {
+  color: #1dcd8d;
+}
+.hidden {
+}
+.show {
+}

@@ -1,0 +1,80 @@
+<div class="row">
+  <section class="container col-8 col-sm-6 col-md-5 col-lg-4">
+    <h1 class="mb-3">Hi, <br />Welcome back</h1>
+    <form action="post" [formGroup]="Loginfrom" (submit)="Login()">
+      <div class="mb-3">
+        <input
+          class="input-box"
+          type="text"
+          placeholder="Email Address"
+          formControlName="Email"
+          [ngClass]="getEmail.status == 'VALID' ? 'is-valid' : ''"
+          [className]="
+            getEmail.status == 'INVALID' && getEmail.touched
+              ? 'input-box form-control is-invalid'
+              : 'input-box form-control'
+          "
+        />
+        <ng-container>
+          <div *ngIf="getEmail.hasError('pattern')" class="invalid-feedback">
+            Email not valid
+          </div>
+          <div *ngIf="getEmail.hasError('required')" class="invalid-feedback">
+            Required
+          </div>
+        </ng-container>
+
+        <div class="valid-feedback">look's good</div>
+      </div>
+      <div class="mb-3">
+        <input
+          class="input-box w-100"
+          type="password"
+          placeholder="Password"
+          formControlName="Password"
+          [ngClass]="getpassword.status == 'VALID' ? 'is-valid' : ''"
+          [className]="
+            getpassword.status == 'INVALID' && getpassword.touched
+              ? 'input-box form-control is-invalid'
+              : 'input-box form-control'
+          "
+        />
+        <ng-container>
+          <div
+            *ngIf="getpassword.hasError('minlength')"
+            class="invalid-feedback"
+          >
+            minimum price 8
+          </div>
+          <div
+            *ngIf="getpassword.hasError('required')"
+            class="invalid-feedback"
+          >
+            Required
+          </div>
+        </ng-container>
+
+        <div class="valid-feedback">look's good</div>
+      </div>
+      <div class="col-12 d-flex mb-2 justify-content-between">
+        <div class="form-check">
+          <input class="" type="radio" value="" id="invalidCheck" />
+          <label class="form-check-label" for="invalidCheck">
+            Remember me
+          </label>
+          <div class="invalid-feedback">You must agree before submitting.</div>
+        </div>
+        <a href="">Forget Password</a>
+      </div>
+      <div class="mb-3">
+        <button class="btn">Login</button>
+      </div>
+    </form>
+    <div>
+      <p>
+        Don't have an count
+        <a [routerLink]="['/register']" class="text-info">signup</a>
+      </p>
+    </div>
+  </section>
+</div>

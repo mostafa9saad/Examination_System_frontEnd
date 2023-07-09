@@ -1,0 +1,91 @@
+<div class="body">
+  <nav #bar class="sidebar" [classList]="flag ? 'sidebar close' : 'sidebar'">
+    <header>
+      <div class="logo">
+        <span class="image">
+          <img src="../../../assets/img/dashboard/logo.png" alt="" />
+        </span>
+        <div class="header-text text">
+          <span class="text">Mostafa</span>
+          <span class="version">Examination system</span>
+        </div>
+        <i
+          (click)="close(bar)"
+          class="bi bi-arrow-right-circle-fill toggle"
+        ></i>
+      </div>
+    </header>
+    <div class="menu-bar">
+      <div class="menu">
+        <li class="search-box">
+          <i class="bi bi-search icons"></i>
+          <input type="text" placeholder="search..." />
+        </li>
+        <ul class="menu-links">
+          <li class="nav-link">
+            <a
+              [routerLink]="['/profile']"
+              [routerLinkActive]="'text-white'"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <i class="bi bi-house icons"></i>
+              <span class="nav-text text">Home</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a
+              [routerLink]="['/dashboard/students']"
+              [routerLinkActive]="'text-white'"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <i class="bi bi-people icons"></i>
+              <span class="nav-text text">Students</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a
+              [routerLink]="['/dashboard/studentsExams']"
+              [routerLinkActive]="'text-white'"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <i class="bi bi-stack icons"></i>
+              <span class="nav-text text">Exams</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a
+              [routerLink]="['/dashboard/testbuilder']"
+              [routerLinkActive]="'text-white'"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <i class="bi bi-gear-wide-connected icons"></i>
+              <span class="nav-text text">Test Builder</span>
+            </a>
+          </li>
+          <li class="nav-link">
+            <a
+              [routerLink]="['/dashboard/newExam']"
+              [routerLinkActive]="'text-white'"
+              [routerLinkActiveOptions]="{ exact: true }"
+            >
+              <i class="bi bi-plus-lg icons"></i>
+              <span class="nav-text text">Add Exam</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <li class="nav-link">
+          <a (click)="logout()">
+            <i class="bi bi-box-arrow-left icons"></i>
+            <span class="nav-text text">Logout</span>
+          </a>
+        </li>
+      </div>
+    </div>
+  </nav>
+
+  <div>
+    <router-outlet></router-outlet>
+  </div>
+</div>

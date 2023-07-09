@@ -1,0 +1,115 @@
+<div class="row">
+  <section class="container col-8 col-sm-6 col-md-5 col-lg-4">
+    <h1 class="mb-3">Sign Up</h1>
+    <form action="post" [formGroup]="registerFrom" (submit)="Register()">
+      <div class="mb-3">
+        <input
+          class="input-box w-100"
+          type="text"
+          placeholder="First Name"
+          formControlName="fName"
+          [ngClass]="getfName.status == 'VALID' ? 'is-valid' : ''"
+          [className]="
+            getfName.status == 'INVALID' && getfName.touched
+              ? 'input-box form-control is-invalid'
+              : 'input-box form-control'
+          "
+        />
+        <ng-container>
+          <div *ngIf="getfName.hasError('minlength')" class="invalid-feedback">
+            minimum length 3
+          </div>
+          <div *ngIf="getfName.hasError('required')" class="invalid-feedback">
+            Required
+          </div>
+        </ng-container>
+        <div class="valid-feedback">look's good</div>
+      </div>
+      <div class="mb-3">
+        <input
+          class="input-box w-100"
+          type="text"
+          placeholder="Last Name"
+          formControlName="lName"
+          [ngClass]="getlName.status == 'VALID' ? 'is-valid' : ''"
+          [className]="
+            getlName.status == 'INVALID' && getlName.touched
+              ? 'input-box form-control is-invalid'
+              : 'input-box form-control'
+          "
+        />
+        <ng-container>
+          <div *ngIf="getlName.hasError('minlength')" class="invalid-feedback">
+            minimum length 3
+          </div>
+          <div *ngIf="getlName.hasError('required')" class="invalid-feedback">
+            Required
+          </div>
+        </ng-container>
+        <div class="valid-feedback">look's good</div>
+      </div>
+      <div class="mb-3">
+        <input
+          class="input-box"
+          type="text"
+          placeholder="Email Address"
+          formControlName="Email"
+          [ngClass]="getEmail.status == 'VALID' ? 'is-valid' : ''"
+          [className]="
+            getEmail.status == 'INVALID' && getEmail.touched
+              ? 'input-box form-control is-invalid'
+              : 'input-box form-control'
+          "
+        />
+        <ng-container>
+          <div *ngIf="getEmail.hasError('pattern')" class="invalid-feedback">
+            invalid Email
+          </div>
+          <div *ngIf="getEmail.hasError('required')" class="invalid-feedback">
+            Required
+          </div>
+        </ng-container>
+        <div class="valid-feedback">look's good</div>
+      </div>
+      <div class="mb-3">
+        <input
+          class="input-box w-100"
+          type="password"
+          placeholder="Password"
+          formControlName="Password"
+          [ngClass]="getpassword.status == 'VALID' ? 'is-valid' : ''"
+          [className]="
+            getpassword.status == 'INVALID' && getpassword.touched
+              ? 'input-box form-control is-invalid'
+              : 'input-box form-control'
+          "
+        />
+        <ng-container>
+          <div
+            *ngIf="getpassword.hasError('minlength')"
+            class="invalid-feedback"
+          >
+            minimum length 8
+          </div>
+          <div
+            *ngIf="getpassword.hasError('required')"
+            class="invalid-feedback"
+          >
+            Required
+          </div></ng-container
+        >
+        <div class="valid-feedback">look's good</div>
+      </div>
+
+      <div class="mb-3">
+        <button class="btn">register</button>
+      </div>
+    </form>
+    <div>
+      <p>
+        do you have account
+        <a [routerLink]="['/login']" class="text-info">Login</a>
+      </p>
+    </div>
+  </section>
+</div>

@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@900&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+.content {
+  padding: 10px 30px;
+
+  min-height: 100vh;
+}
+header {
+  border-bottom: 0.5px solid var(--gray--color);
+  padding-bottom: 15px;
+}
+.compo select {
+  outline: none;
+  padding: 5px 10px;
+}
+.compo select:focus {
+  box-shadow: none;
+  outline: 1px solid var(--green--color);
+}
+.text {
+  font-weight: 500;
+}
+textarea {
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+  font-size: 16px;
+  resize: none;
+}
+
+textarea:focus {
+  border: none;
+  outline: 1px solid var(--green--color);
+}
+
+.Radio :first-child {
+  display: flex;
+  justify-content: start;
+  gap: 10px;
+  /* background-color: #000; */
+}
+.radio :first-child input {
+  display: block;
+}
+
+.subtitle {
+  font-size: small;
+  font-weight: 300;
+  color: var(--gray--color);
+}
+header .text {
+  font-size: x-large;
+  font-weight: 600;
+}
+.Question input:focus {
+  box-shadow: none;
+  outline: 1px solid var(--green--color);
+}
+button {
+  background-color: var(--green--color);
+  border: none;
+  color: white;
+}
+button:hover {
+  color: var(--green--color);
+  background-color: var(--backgoundSecandry--color);
+}

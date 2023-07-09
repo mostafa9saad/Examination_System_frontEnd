@@ -1,0 +1,40 @@
+.card {
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.card-body {
+  /* flex: 1 1 auto; */
+  display: flex;
+  flex-direction: column;
+
+  min-height: 1px;
+  padding: 3rem;
+  width: 70%;
+  border: 1px solid #eee;
+  margin: auto;
+  margin-top: 10%;
+}
+body {
+  margin-top: 20px;
+  color: #1a202c;
+  text-align: left;
+  background-color: #e2e8f0;
+}
+.body {
+  min-height: 100vh;
+  /* display: flex; */
+}
+input {
+}
+input:focus {
+  box-shadow: none;
+}
+button {
+  background-color: var(--green--color);
+  border: none;
+  color: white;
+}
+button:hover {
+  color: var(--green--color);
+  background-color: var(--backgoundSecandry--color);
+}
